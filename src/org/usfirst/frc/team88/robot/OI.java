@@ -3,6 +3,7 @@ package org.usfirst.frc.team88.robot;
 import edu.wpi.first.wpilibj.Joystick;
 
 import org.usfirst.frc.team88.robot.commands.Shift;
+import org.usfirst.frc.team88.robot.commands.ZeroEncoders;
 
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -68,7 +69,7 @@ public class OI {
 		//    until it is finished as determined by it's isFinished method.
 
 		driverButtonRightBumper.whenPressed(new Shift());
-		
+		driverButtonLeftBumper.whenPressed(new ZeroEncoders());
 		
 
 	}
@@ -80,7 +81,7 @@ public class OI {
 	// driver controller
 
 	public double getDriverRightY() {
-		return -driverController.getRawAxis(RIGHT_VERT_AXIS);
+		return driverController.getRawAxis(RIGHT_VERT_AXIS);
 	}
 
 	public double getDriverRightX() {
@@ -88,7 +89,7 @@ public class OI {
 	}
 
 	public double getDriverLeftY() {
-		return -driverController.getRawAxis(LEFT_VERT_AXIS);
+		return driverController.getRawAxis(LEFT_VERT_AXIS);
 	}
 
 	public double getDriverLeftX() {

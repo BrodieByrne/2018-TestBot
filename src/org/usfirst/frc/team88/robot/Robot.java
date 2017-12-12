@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team88.robot.commands.ExampleCommand;
+import org.usfirst.frc.team88.robot.commands.AutoDriveDistance;
+import org.usfirst.frc.team88.robot.commands.DriveSpeed;
 import org.usfirst.frc.team88.robot.subsystems.Drive;
-import org.usfirst.frc.team88.robot.subsystems.ExampleSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +33,9 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		drive = new Drive();
 		oi = new OI();
+		
+		SmartDashboard.putData("Auto Distance", new AutoDriveDistance());
+		SmartDashboard.putData("Drive Speed", new DriveSpeed());
 	}
 
 	/**
